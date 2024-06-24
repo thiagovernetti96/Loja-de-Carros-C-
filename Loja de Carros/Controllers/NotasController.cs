@@ -63,26 +63,10 @@ namespace Loja_de_Carros.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(NotaFormViewModel viewModel)
         {
-            if (ModelState.IsValid)
-            {
+            
                 _context.Add(viewModel.Nota);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
-            }
-
-            // Log or debug output to check model state
-            foreach (var modelState in ViewData.ModelState.Values)
-            {
-                foreach (var error in modelState.Errors)
-                {
-                    Console.WriteLine(error.ErrorMessage);
-                }
-            }
-
-            viewModel.Vendedores = _context.Vendedor.ToList();
-            viewModel.Carros = _context.Carro.ToList();
-            viewModel.Clientes = _context.Cliente.ToList();
-            return View(viewModel);
         }
 
 

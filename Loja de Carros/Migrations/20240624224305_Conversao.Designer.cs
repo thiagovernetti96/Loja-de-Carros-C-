@@ -4,6 +4,7 @@ using Loja_de_Carros.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Loja_de_Carros.Migrations
 {
     [DbContext(typeof(Loja_de_CarrosContext))]
-    partial class Loja_de_CarrosContextModelSnapshot : ModelSnapshot
+    [Migration("20240624224305_Conversao")]
+    partial class Conversao
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
